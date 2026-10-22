@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>IT Quest - Number Quiz Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">IT</div>
+      <div>
+        <h1>IT QUEST</h1>
+        <p>NUMBER QUIZ CHALLENGE</p>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <button id="soundBtn" class="secondary-btn">🔊 Sound On</button>
+      <button id="fullscreenBtn" class="secondary-btn">⛶ Full Screen</button>
+    </div>
+  </header>
+
+  
+<main class="container">
+  <!-- Keep the IT QUEST header unchanged -->
+
+  <section id="selectionScreen" class="game-panel">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">CHOOSE YOUR CHALLENGE</span>
+        <h2>Select a Number</h2>
+      </div>
+      <span id="selectionStatus" class="status-pill">
+        20 numbers available
+      </span>
+    </div>
+
+    <div class="progress-track">
+      <div id="progressBar" class="progress-fill"></div>
+    </div>
+     
+<!-- Quiz Statistics -->
+  <div class="quiz-stats">
+    <div class="stat-box total-box">
+      <span class="stat-icon">📋</span>
+      <span class="stat-label">TOTAL QUESTIONS</span>
+      <strong id="totalQuestions">40</strong>
+      <small>IT Challenges</small>
+   </div>
+
+     <div class="stat-box correct-box">
+      <span class="stat-icon">✅</span>
+      <span class="stat-label">CORRECT ANSWERS</span>
+      <strong id="correctCount">0</strong>
+      <small>Correct responses</small>
+   </div>
+
+     <div class="stat-box wrong-box">
+      <span class="stat-icon">❌</span>
+      <span class="stat-label">WRONG ANSWERS</span>
+      <strong id="wrongCount">0</strong>
+      <small>Incorrect responses</small>
+   </div>
+
+     <div class="stat-box remaining-box">
+      <span class="stat-icon">🎯</span>
+      <span class="stat-label">REMAINING</span>
+      <strong id="remainingQuestions">40</strong>
+      <small>Questions left</small>
+   </div>
+ </div>
+
+<div class="stats-progress">
+  <div class="stats-progress-fill" id="statsProgressFill"></div>
+</div>
+
+<p class="stats-progress-text" id="statsProgressText">
+  0 of 40 questions answered
+</p>
+
+
+    <div id="numberGrid" class="number-grid"></div>
+
+    <div class="legend">
+      <span><i class="legend-dot available"></i> Available</span>
+      <span><i class="legend-dot partial"></i> One completed</span>
+      <span><i class="legend-dot completed"></i> Both completed</span>
+    </div>
+
+    <div class="bottom-actions">
+      <button id="resetBtn" class="danger-btn">↻ Reset Game</button>
+      <p>Keyboard: F = Full screen · Esc = Back</p>
+    </div>
+  </section>
+
+  <section id="questionScreen" class="game-panel hidden">
+    <div class="question-top">
+      <button id="backBtn" class="secondary-btn">
+        ← Back to Numbers
+      </button>
+      <span id="questionBadge" class="status-pill"></span>
+      <span id="questionTimer" class="timer">20s</span>
+    </div>
+
+    <div class="question-content">
+      <span class="eyebrow">YOUR IT CHALLENGE</span>
+      <h2 id="questionText"></h2>
+      <p id="questionHint">Discuss your answer with your team.</p>
+      <div id="optionsGrid" class="options-grid"></div>
+    </div>
+
+    <div class="question-footer">
+      <p id="selectionMessage">
+        Choose an answer, then reveal the correct answer.
+      </p>
+      <button id="nextBtn" class="primary-btn">
+        Next — Reveal Answer →
+      </button>
+    </div>
+  </section>
+
+  <section id="answerScreen" class="game-panel hidden">
+    <div class="answer-content">
+      <div id="answerIcon" class="answer-icon">✓</div>
+      <span class="eyebrow">ANSWER REVEALED</span>
+      <h2 id="answerTitle">Correct Answer</h2>
+      <div id="correctAnswer" class="correct-answer"></div>
+      <p id="answerExplanation" class="explanation"></p>
+
+      <div class="return-panel">
+        <div>
+          <span class="eyebrow">NEXT CHALLENGE</span>
+          <p>Returning to number selection in</p>
+        </div>
+        <strong><span id="countdown">10</span>s</strong>
+      </div>
+
+      <button id="returnNowBtn" class="primary-btn">
+        Return to Numbers Now →
+      </button>
+    </div>
+  </section>
+
+  <section id="summaryScreen" class="game-panel hidden">
+    <div class="answer-content">
+      <div class="answer-icon">🏆</div>
+      <span class="eyebrow">CHALLENGE COMPLETED</span>
+      <h2>IT Quest Champion!</h2>
+      <p id="summaryText"></p>
+
+      <div class="final-scores">
+        <div>
+          <span>TEAM A</span>
+          <strong id="finalA">0</strong>
+        </div>
+        <div>
+          <span>TEAM B</span>
+          <strong id="finalB">0</strong>
+        </div>
+      </div>
+
+      <h3 id="winnerText"></h3>
+      <button id="playAgainBtn" class="primary-btn">
+        Play Again ↻
+      </button>
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <p>IT QUEST © 2026 · School IT Learning Challenge</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
